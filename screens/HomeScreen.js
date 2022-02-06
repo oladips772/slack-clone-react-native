@@ -1,10 +1,21 @@
 /** @format */
-import { StyleSheet, Text, View, Image, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  StatusBar,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import tw from "twrnc";
 import Feed from "../components/Feed";
+import useAuth from "../hooks/useAuth";
+import { memoedValue } from "../hooks/useAuth";
 
 const HomeScreen = () => {
+  const { logoutGoogle, user, loading } = useAuth(memoedValue);
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="white" backgroundColor="#4A154B" />
@@ -19,14 +30,16 @@ const HomeScreen = () => {
         <Text style={tw`font-bold text-white text-lg text-center items-center`}>
           Slack Community
         </Text>
-        <Image
-          style={styles.userLogo}
-          source={{
-            uri: "https://media-exp1.licdn.com/dms/image/C4E03AQFOfPu93n6Kxw/profile-displayphoto-shrink_100_100/0/1632301101571?e=1649894400&v=beta&t=UDufBl9k4T3xAMVArarvPeQtuuuhgflKTlm9SfDuoQE",
-          }}
-        />
-          </View>
-          <Feed />
+        <TouchableOpacity onPress={logoutGoogle}>
+          <Image
+            style={styles.userLogo}
+            source={{
+              uri: user.photoURL,
+            }}
+          />
+        </TouchableOpacity>
+      </View>
+      <Feed />
     </View>
   );
 };
