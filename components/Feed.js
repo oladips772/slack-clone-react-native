@@ -1,5 +1,5 @@
 /** @format */
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import tw from "twrnc";
 import { AntDesign } from "@expo/vector-icons";
@@ -30,6 +30,10 @@ const Feed = () => {
       <View style={tw`mt-4`}>
         <Text style={tw`text-gray-600 text-sm font-bold mb-4`}>channels</Text>
         <Channelist />
+        <TouchableOpacity style={tw`flex flex-row items-center space-x-4 mt-2 p-2`}>
+          <AntDesign name="plus" size={20} style={tw`text-gray-600 font-bold`} />
+          <Text style={tw`text-gray-600 font-bold ml-2`}>Add a channel</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

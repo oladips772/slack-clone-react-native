@@ -7,6 +7,8 @@ const Channelist = () => {
   return (
     <View>
       <Channel />
+      <Channel />
+      <Channel />
     </View>
   );
 };
