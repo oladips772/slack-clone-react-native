@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "646544315393",
+    "project_id": "slack-clone-react-native",
+    "storage_bucket": "slack-clone-react-native.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646544315393:android:16ba4e43a7d231c1fddc00",
+        "android_client_info": {
+          "package_name": "host.exp.exponent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646544315393-m7740aj8lumovk26i5p7mdvv74os37rn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFJI1bwh86kmv7Ex4QMqNGz4VAZYHhQak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646544315393-m7740aj8lumovk26i5p7mdvv74os37rn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "646544315393-kl7mt0tdhbfthm1lh9g61eherqioi0hq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "host.exp.exponent"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

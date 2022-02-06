@@ -39,7 +39,7 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default Feed;                                          
 
 const styles = StyleSheet.create({
   container: {

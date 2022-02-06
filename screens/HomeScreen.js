@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingTop: 4,
-    paddingBottom: 5,
+    paddingBottom: 7,
     paddingHorizontal: 6,
   },
   headerLogo: {
