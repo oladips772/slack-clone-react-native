@@ -12,27 +12,31 @@ import tw from "twrnc";
 import useAuth from "../hooks/useAuth";
 import { memoedValue } from "../hooks/useAuth";
 const LoginScreen = () => {
-  const { signInWithGoogle } = useAuth(memoedValue);
+  const { signInWithGoogle, loading } = useAuth(memoedValue);
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle="white" backgroundColor="#4A154B" />
-      <View style={styles.loginDiv}>
-        <Image
-          style={styles.headerLogo}
-          source={{
-            uri: "https://www.itprotoday.com/sites/itprotoday.com/files/appIcon_desktop.png",
-          }}
-        />
-        <TouchableOpacity onPress={signInWithGoogle}>
-          <Text
-            style={tw`text-lg font-bold bg-white rounded-md py-1 px-4 text-["#4A154B"]`}
-          >
-            Continue with Google
-          </Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <>
+      {!loading && (
+        <View style={styles.container}>
+          <StatusBar barStyle="white" backgroundColor="#4A154B" />
+          <View style={styles.loginDiv}>
+            <Image
+              style={styles.headerLogo}
+              source={{
+                uri: "https://www.itprotoday.com/sites/itprotoday.com/files/appIcon_desktop.png",
+              }}
+            />
+            <TouchableOpacity onPress={signInWithGoogle}>
+              <Text
+                style={tw`text-lg font-bold bg-white rounded-md py-1 px-4 text-["#4A154B"]`}
+              >
+                Continue with Google
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
+    </>
   );
 };
 

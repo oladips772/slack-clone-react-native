@@ -17,30 +17,34 @@ const HomeScreen = () => {
   const { logoutGoogle, user, loading } = useAuth(memoedValue);
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle="white" backgroundColor="#4A154B" />
-      {/* header view */}
-      <View style={styles.headerContainer}>
-        <Image
-          style={styles.headerLogo}
-          source={{
-            uri: "https://www.itprotoday.com/sites/itprotoday.com/files/appIcon_desktop.png",
-          }}
-        />
-        <Text style={tw`font-bold text-white text-lg text-center items-center`}>
-          Slack Community
-        </Text>
-        <TouchableOpacity onPress={logoutGoogle}>
+    <>
+      <View style={styles.container}>
+        <StatusBar barStyle="white" backgroundColor="#4A154B" />
+        {/* header view */}
+        <View style={styles.headerContainer}>
           <Image
-            style={styles.userLogo}
+            style={styles.headerLogo}
             source={{
-              uri: user.photoURL,
+              uri: "https://www.itprotoday.com/sites/itprotoday.com/files/appIcon_desktop.png",
             }}
           />
-        </TouchableOpacity>
+          <Text
+            style={tw`font-bold text-white text-lg text-center items-center`}
+          >
+            Slack Community
+          </Text>
+          <TouchableOpacity onPress={logoutGoogle}>
+            <Image
+              style={styles.userLogo}
+              source={{
+                uri: user.photoURL,
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+        <Feed />
       </View>
-      <Feed />
-    </View>
+    </>
   );
 };
 
