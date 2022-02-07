@@ -3,12 +3,12 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import tw from "twrnc";
 
-const Channel = () => {
+const Channel = ({ channelName }) => {
   return (
     <TouchableOpacity style={{ marginBottom: 6 }}>
       <View style={styles.container}>
         <Text style={tw`font-bold text-gray-600 text-lg mr-4`}>#</Text>
-        <Text style={tw`text-lg text-gray-800`}>Jos channel</Text>
+        <Text style={tw`text-lg text-gray-800`}>{channelName}</Text>
       </View>
     </TouchableOpacity>
   );
