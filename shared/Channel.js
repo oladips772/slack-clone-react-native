@@ -7,7 +7,7 @@ const Channel = () => {
   return (
     <TouchableOpacity style={{ marginBottom: 6 }}>
       <View style={styles.container}>
-        <Text style={tw`font-bold text-gray-600 text-lg mr-6`}>#</Text>
+        <Text style={tw`font-bold text-gray-600 text-lg mr-4`}>#</Text>
         <Text style={tw`text-lg text-gray-800`}>Jos channel</Text>
       </View>
     </TouchableOpacity>

@@ -6,6 +6,7 @@ import {
   Image,
   StatusBar,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import React from "react";
 import tw from "twrnc";
@@ -42,7 +43,9 @@ const HomeScreen = () => {
             />
           </TouchableOpacity>
         </View>
-        <Feed />
+        <ScrollView showsVerticalScrollIndicator={false} vertical={true}>
+          <Feed />
+        </ScrollView>
       </View>
     </>
   );

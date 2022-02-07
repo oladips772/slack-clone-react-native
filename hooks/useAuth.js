@@ -53,14 +53,12 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     signOut(auth);
     setLoading(false);
-
   };
 
   useEffect(
     () =>
       onAuthStateChanged(auth, (user) => {
         setUser(user);
-        console.log(user);
         setLoadingInitial(false);
       }),
     []

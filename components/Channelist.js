@@ -9,6 +9,7 @@ const Channelist = () => {
       <Channel />
       <Channel />
       <Channel />
+      <Channel />
     </View>
   );
 };

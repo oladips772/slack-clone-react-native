@@ -28,7 +28,7 @@ const LoginScreen = () => {
             />
             <TouchableOpacity onPress={signInWithGoogle}>
               <Text
-                style={tw`text-lg font-bold bg-white rounded-md py-1 px-4 text-["#4A154B"]`}
+                style={tw`text-lg font-bold bg-white rounded-md py-1 px-4 text-[#4A154B]`}
               >
                 Continue with Google
               </Text>
