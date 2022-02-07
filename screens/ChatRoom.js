@@ -1,5 +1,5 @@
 /** @format */
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, StatusBar } from "react-native";
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
 import {
@@ -13,6 +13,7 @@ import {
 import tw from "twrnc";
 import useAuth from "../hooks/useAuth";
 import { memoedValue } from "../hooks/useAuth";
+import { AntDesign } from "@expo/vector-icons";
 
 const ChatRoom = ({ navigation, route }) => {
   const Channel = route.params;
@@ -24,11 +25,27 @@ const ChatRoom = ({ navigation, route }) => {
 
   return (
     <View>
-      <Text></Text>
+      <StatusBar barStyle="black" backgroundColor="white" />
+      {/* chat room header */}
+      <View style={styles.headerContainer}>
+        <View style={tw`flex items-center space-x-2`}>
+          <AntDesign name="left" size={24} style={tw`mr-2`} />
+          <Text>
+            # {""}
+            {Channel.channelName}
+          </Text>
+        </View>
+      </View>
     </View>
   );
 };
 
 export default ChatRoom;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  headerContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+});

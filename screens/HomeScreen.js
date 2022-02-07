@@ -14,7 +14,7 @@ import Feed from "../components/Feed";
 import useAuth from "../hooks/useAuth";
 import { memoedValue } from "../hooks/useAuth";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const { logoutGoogle, user, loading } = useAuth(memoedValue);
 
   return (
@@ -44,7 +44,7 @@ const HomeScreen = () => {
           </TouchableOpacity>
         </View>
         <ScrollView showsVerticalScrollIndicator={false} vertical={true}>
-          <Feed />
+          <Feed navigation={navigation} />
         </ScrollView>
       </View>
     </>
