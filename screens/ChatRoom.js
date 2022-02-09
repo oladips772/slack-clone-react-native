@@ -10,6 +10,7 @@ import {
   KeyboardAvoidingView,
   Keyboard,
   ToastAndroid,
+  LogBox,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
@@ -26,6 +27,7 @@ import useAuth from "../hooks/useAuth";
 import { memoedValue } from "../hooks/useAuth";
 import { AntDesign, MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Message from "../shared/Message";
+LogBox.ignoreAllLogs();
 
 const ChatRoom = ({ navigation, route }) => {
   const Channel = route.params;
@@ -49,7 +51,7 @@ const ChatRoom = ({ navigation, route }) => {
       setInput("");
     } else {
       ToastAndroid.showWithGravityAndOffset(
-        "your message cant be sent if emmpty!",
+        "your message won't be sent if empty!",
         ToastAndroid.SHORT,
         ToastAndroid.BOTTOM,
         25,
@@ -106,7 +108,7 @@ const ChatRoom = ({ navigation, route }) => {
             backgroundColor: "blue",
           }}
         >
-          <>
+          <View>
             {messages.map(
               ({ id, data: { userName, userImage, message, timeStamp } }) => (
                 // <Message
@@ -122,7 +124,7 @@ const ChatRoom = ({ navigation, route }) => {
                 </Text>
               )
             )}
-          </>
+          </View>
         </ScrollView>
         <View style={styles.inputContainer}>
           <View

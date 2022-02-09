@@ -9,7 +9,7 @@ const Message = ({ userName, userImage, message, id, timeStamp }) => {
       style={{ padding: 4, flexDirection: "row", backgroundColor: "green" }}
       ley={id}
     >
-      {/* <Image source={{ uri: userImage }} style={tw`h-12 w-12 rounded-full`} /> */}
+      <Image source={{ uri: userImage }} style={tw`h-12 w-12 rounded-full`} />
       <View>
         <View style={{ alignItems: "center", flexDirection: "row" }}>
           <Text style={tw`font-bold`}>{userName}</Text>
