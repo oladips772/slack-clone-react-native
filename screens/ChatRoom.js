@@ -1,4 +1,5 @@
 /** @format */
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -12,7 +13,6 @@ import {
   ToastAndroid,
   LogBox,
 } from "react-native";
-import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
 import {
   addDoc,
@@ -28,7 +28,7 @@ import { memoedValue } from "../hooks/useAuth";
 import { AntDesign, MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Message from "../shared/Message";
 LogBox.ignoreAllLogs();
-
+ 
 const ChatRoom = ({ navigation, route }) => {
   const Channel = route.params;
   const [messages, setMessages] = useState([]);
@@ -109,7 +109,7 @@ const ChatRoom = ({ navigation, route }) => {
           }}
         >
           <View>
-            {messages.map(
+            {messages && messages.map(
               ({ id, data: { userName, userImage, message, timeStamp } }) => (
                 // <Message
                 //   key={id}

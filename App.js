@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, LogBox } from "react-native";
 import Navigation from "./Navigation";
 LogBox.ignoreAllLogs();
 import { AuthProvider } from "./hooks/useAuth";
+
 export default function App() {
   return (
     <AuthProvider>
